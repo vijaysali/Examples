@@ -29,5 +29,11 @@ def get_number_of_list(a, i = 0)
   return i if a[i].nil?
   get_number_of_list(a, i+1)
 end
-y = [1, 2, 10, 14]
-p get_number_of_list(y)
+#y = [1, 2, 10, 14]
+#p get_number_of_list(y)
+
+#Reverse an array list
+def reverse(a)
+  a.reduce([]) {|acc, val| [val] + acc }
+end
+p reverse(x)
