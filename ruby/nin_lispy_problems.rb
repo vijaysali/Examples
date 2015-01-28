@@ -36,4 +36,20 @@ end
 def reverse(a)
   a.reduce([]) {|acc, val| [val] + acc }
 end
-p reverse(x)
+#p reverse(x)
+
+def palindrome(list)
+  pal_check = true
+  list_len = list.size
+  n = list.size/2
+  0.upto(n).each do |i|
+    pal_check = false if not list[i] == list[list_len-i-1]
+  end
+  if pal_check
+    puts "Palindrome"
+  else
+    puts "Not a palindrome"
+  end
+end
+#val = "BBBBABBBB".split("")
+#palindrome(val)
