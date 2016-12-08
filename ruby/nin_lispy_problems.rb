@@ -53,3 +53,16 @@ def palindrome(list)
 end
 #val = "BBBBABBBB".split("")
 #palindrome(val)
+
+def flatten(nested_set, flatten_list = [])
+  nested_set.each do |element|
+    if element.is_a? Array
+      flatten(element, flatten_list)
+    else
+      flatten_list << element
+    end
+  end
+  return flatten_list
+end
+
+p flatten([:a, :b, [:c, :d], [[:x, :y], :e, :f, :g], :h, [:i]])
