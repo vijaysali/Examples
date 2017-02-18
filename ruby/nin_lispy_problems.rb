@@ -65,4 +65,8 @@ def flatten(nested_set, flatten_list = [])
   return flatten_list
 end
 
-p flatten([:a, :b, [:c, :d], [[:x, :y], :e, :f, :g], :h, [:i]])
+#p flatten([:a, :b, [:c, :d], [[:x, :y], :e, :f, :g], :h, [:i]])
+
+def elem_consec_list(list)
+
+end
