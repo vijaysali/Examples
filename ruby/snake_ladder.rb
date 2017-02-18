@@ -12,14 +12,20 @@ class Board
   end
 
   def set_snake(head, tail)
+    raise "head and tail for snake value should be within the max-size" if head > self.max_size or tail > self.max_size
     if head > tail
       @snake_ladder[head] = tail
+    else
+      raise "Cannot set snake parameters"
     end
   end
 
   def set_ladder(head, tail)
+    raise "head and tail for ladder value should be within the max-size" if head > self.max_size or tail > self.max_size
     if tail > head
       @snake_ladder[tail] = head
+    else
+      raise "Cannot set ladder parameters"
     end
   end
 
@@ -76,5 +82,6 @@ players = 1.upto(3).map {|x| Player.new("player-#{x}") }
 b = Board.new(50, players)
 b.set_snake(30, 10)
 b.set_ladder(15, 25)
+puts "Snake and Ladder Game"
 puts b.inspect
 b.play
